@@ -1,29 +1,32 @@
-// const Banner = () => {
-//     return (
-//         <div className="relative">
-//             <div className="relative">
-//                 {/* Image */}
-//                 <img 
-//                     className="w-full h-full object-cover" 
-//                     src="https://i.ibb.co/G7KSj5K/top-view-table-full-delicious-food-composition.jpg" 
-//                     alt="Delicious Food" 
-//                 />
-//                 {/* Darker Gradient Overlay */}
-//                 <div className="absolute inset-0 bg-gradient-to-br from-black via-black/90 to-black opacity-90"></div>
-//             </div>
-//         </div>
-//     );
-// };
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from '../features/counters/counterSlice';
 
-// export default Banner;
 const Banner = () => {
-    return (
-        <div className='h-[100vh] flex items-center justify-start z-10'>
-            <h1 className="text-5xl text-white">Hello, World!</h1>
-        </div>
-    );
+  const count = useSelector((state) => state.counter.value);  
+  const dispatch = useDispatch();
+
+  return (
+    <div className="h-[100vh] mt-[50vh]">
+      <div className="flex gap-4 items-center justify-center z-10">
+        <button
+          onClick={() => dispatch(increment())}
+          className="px-4 py-2 rounded-lg text-white bg-slate-950"
+        >
+          Increase
+        </button>
+        <button
+          onClick={() => dispatch(decrement())}
+          className="px-4 py-2 rounded-lg text-white bg-slate-950"
+        >
+          Decrease
+        </button>
+      </div>
+      <div className="flex justify-center mt-10">
+        <h2 className="text-white text-3xl font-semibold">Count: {count}</h2>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
-
-

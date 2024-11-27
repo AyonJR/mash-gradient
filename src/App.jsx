@@ -11,9 +11,7 @@ function App() {
       {/* Main content */}
       <div className="relative z-10">  
         <Banner />
-        <div>
-          <Outlet />
-        </div>
+      
       </div>
     </div>
   )

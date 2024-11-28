@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from '../features/counters/counterSlice';
+import Posts from '../showingPosts/Posts'
 
 const Banner = () => {
   const count = useSelector((state) => state.counter.value);  
@@ -25,6 +26,13 @@ const Banner = () => {
       <div className="flex justify-center mt-10">
         <h2 className="text-white text-3xl font-semibold">Count: {count}</h2>
       </div>
+
+{/* all the posts */}
+    <div className='mt-10'>
+      <Posts></Posts>
+    </div>
+ 
+
     </div>
   );
 };

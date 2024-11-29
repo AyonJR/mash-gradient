@@ -1,10 +1,10 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../features/counters/counterSlice';
-import Posts from '../showingPosts/Posts'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../features/counters/counterSlice";
+import Posts from "../showingPosts/Posts";
 
 const Banner = () => {
-  const count = useSelector((state) => state.counter.value);  
+  const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
 
   return (
@@ -27,12 +27,10 @@ const Banner = () => {
         <h2 className="text-white text-3xl font-semibold">Count: {count}</h2>
       </div>
 
-{/* all the posts */}
-    <div className='mt-10'>
-      <Posts></Posts>
-    </div>
- 
-
+      {/* all the posts */}
+      <div className="mt-10">
+        <Posts></Posts>
+      </div>
     </div>
   );
 };

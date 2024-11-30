@@ -4,6 +4,9 @@ import { increment, decrement } from "../features/counters/counterSlice";
 import Posts from "../showingPosts/Posts";
 
 const Banner = () => {
+
+  // in the state there appears all the slices in a object 
+  
   const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
 
@@ -12,7 +15,7 @@ const Banner = () => {
       <div className="flex gap-4 items-center justify-center z-10">
         <button
           onClick={() => dispatch(increment())}
-          className="px-4 py-2 rounded-lg text-white bg-slate-950"
+          className="text-white px-4 py-2 rounded-lg bg-slate-950"
         >
           Increase
         </button>

@@ -7,3 +7,4 @@ export const getPosts = async () => {
 };
 
 
+// we can add more api's here 
